@@ -3,4 +3,8 @@
 here=$(cd $(dirname $0); pwd)
 cd $here
 
-for u in / /other/ ; do prequest development.ini $u; done
+for ini in development.ini production.ini
+do
+    echo ${ini}
+    for u in / /other/ ; do prequest ${ini} $u; done
+done
