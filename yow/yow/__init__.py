@@ -12,7 +12,7 @@ def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     config = Configurator(settings=settings)
-    config.include('pyramid_chameleon')
+    config.include('pyramid_mako')
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.include(add_home_views)
     config.include(add_other_views, route_prefix='/other')
